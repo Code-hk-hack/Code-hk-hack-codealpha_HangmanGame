@@ -1,37 +1,40 @@
-# 🤖 Mahiru - Rule-Based Chatbot
+# 🎮 Hangman Game
 
-A simple, friendly rule-based chatbot built in Python. Mahiru greets the user, asks for their name, checks in on how they're feeling, and responds using predefined keyword matching — all through a console-based conversation loop.
+A classic console-based Hangman game. The program randomly selects a secret word, and the player has 6 incorrect guesses to figure it out one letter at a time.
 
 ## Features
-- Greets the user and waits for a valid "hello" before starting
-- Personalized responses based on the name entered (with special easter-egg replies)
-- Detects positive vs. negative mood keywords and responds empathetically
-- Graceful conversation exit only after the user says "bye"
-- Option to restart the chat or end the session completely
+- Random word selection from a predefined word bank
+- Tracks guessed letters to prevent repeat guesses
+- Input validation (rejects anything that isn't a single alphabet letter)
+- Displays remaining incorrect guesses and progress after each turn
+- Win/loss detection with a final reveal of the secret word
 
 ## Concepts Demonstrated
-- `while` loops for input validation
-- `if / elif / else` conditional logic
-- String methods (`.lower()`, `.strip()`)
-- Lists for keyword matching
-- f-strings for dynamic output
+- Functions (`play_hangman()`)
+- Lists and sets
+- The `random` module
+- `while` loops with compound conditions
+- `if / else` logic for input validation and win/loss checks
+- String and list manipulation (`enumerate`, `.join()`)
 
 ## How to Run
 ```bash
-python chatbot.py
+python Hangman_Game.py
 ```
 
 ## Example Interaction
 ```
-Mahiru: Say 'hello' to start our chat! 👋
-You: hello
-Mahiru: Yay! Hello there! Great, let's chat! 🎉
-Mahiru: What's your name?
-You: Alex
-Mahiru: Nice to meet you, Alex! What a lovely name! ✨
+=== Welcome to Hangman! ===
+The word has 6 letters.
+
+_ _ _ _ _ _
+Incorrect guesses remaining: 6
+Guessed letters: None
+Guess a letter: p
+✅ Good job! 'p' is in the word.
 ```
 
 ## Possible Improvements
-- Expand keyword lists to catch more variations of mood/greetings
-- Add more topics the bot can respond to (weather, jokes, etc.)
-- Refactor repeated input-validation loops into a reusable function
+- Add difficulty levels with longer/shorter word banks
+- Display an ASCII hangman figure that updates with each wrong guess
+- Let the player choose a category (animals, countries, etc.)
